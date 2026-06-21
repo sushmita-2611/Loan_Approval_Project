@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
@@ -10,7 +11,8 @@ st.set_page_config(
 )
 
 # ---------------- LOAD MODEL ----------------
-model = joblib.load("../Model/loan_model.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(_file_))
+model = joblib.load(os.path.join(BASE_DIR, "..", "Model", "loan_model.pkl"))
 
 # ---------------- TITLE ----------------
 st.title("🏦 Loan Approval Prediction System")
