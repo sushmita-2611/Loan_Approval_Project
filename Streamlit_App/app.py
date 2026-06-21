@@ -3,18 +3,15 @@ import pandas as pd
 import joblib
 import os
 
-# ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="Loan Approval Prediction",
     page_icon="🏦",
     layout="centered"
 )
 
-# ---------------- LOAD MODEL ----------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model = joblib.load(os.path.join(BASE_DIR, "..", "Model", "loan_model.pkl"))
 
-# ---------------- TITLE ----------------
 st.title("🏦 Loan Approval Prediction System")
 
 st.info(
@@ -24,7 +21,6 @@ st.info(
 
 st.markdown("---")
 
-# ---------------- APPLICANT INFORMATION ----------------
 st.subheader("👤 Applicant Information")
 
 gender = st.selectbox(
@@ -54,7 +50,6 @@ employment = st.selectbox(
 
 st.markdown("---")
 
-# ---------------- FINANCIAL INFORMATION ----------------
 st.subheader("💰 Financial Information")
 
 applicant_income = st.number_input(
@@ -96,8 +91,6 @@ property_area = st.selectbox(
 )
 
 st.markdown("---")
-
-# ---------------- PREDICTION ----------------
 
 if st.button("Predict Loan Status", use_container_width=True):
 
@@ -213,10 +206,8 @@ the loan application is likely to be rejected.
 """
         )
 
-# ---------------- FOOTER ----------------
-
 st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: gray;'>Developed by <b>Sushmita Tiwari</b></div>",
+    "<div style='text-align: center; color: gray;'>Developed by <b>Sushmita Tiwari and Tanu Khatri</b></div>",
     unsafe_allow_html=True
 )
