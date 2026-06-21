@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # ---------------- LOAD MODEL ----------------
-BASE_DIR = os.path.dirname(os.path.abspath(_file_))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model = joblib.load(os.path.join(BASE_DIR, "..", "Model", "loan_model.pkl"))
 
 # ---------------- TITLE ----------------
